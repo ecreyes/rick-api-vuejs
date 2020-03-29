@@ -1,0 +1,1 @@
+export const API_RICK_URL = 'https://rickandmortyapi.com/api';
