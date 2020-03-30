@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-toolbar class="hidden-lg-and-up" color="primary" dark>
+    <v-toolbar class="hidden-lg-and-up" color="indigo" dark>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
     </v-toolbar>
     <v-navigation-drawer dark color="info" v-model="drawer" app :width="220">

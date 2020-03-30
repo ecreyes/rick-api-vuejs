@@ -10,5 +10,8 @@ export default {
     },
     getCharacter: (state) => (id) => {
         return state.characters.filter(character => character.id == id)[0];
+    },
+    getLocation: (state) => (id) => {
+        return state.characters.filter(character => character.id == id)[0].location;
     }
 }

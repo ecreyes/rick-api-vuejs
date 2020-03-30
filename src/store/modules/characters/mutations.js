@@ -19,7 +19,12 @@ export default{
         state.isFetching = data.isFetching;
     },
     [SET_EPISODES_SUCCESS](state,data){
-        state.episodes = data.payload;
+        if(Array.isArray(data.payload)){
+            state.episodes = data.payload;
+        }else{
+            state.episodes = [];
+            state.episodes.push(data.payload);
+        }
         state.isFetching = data.isFetching;
         state.error = data.error;
     },

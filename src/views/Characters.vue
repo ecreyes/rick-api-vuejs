@@ -5,13 +5,13 @@
       <div class="text-center">
         <v-pagination v-model="page" :length="info.pages" total-visible="12"></v-pagination>
       </div>
-      <v-row dense>
+      <v-row>
         <v-col
           cols="12"
           xs="12"
           sm="4"
           md="4"
-          lg="3"
+          lg="4"
           v-for="character of characters"
           :key="character.id"
         >
@@ -44,14 +44,18 @@ export default {
   name: "Characters",
   data() {
     return {
-      page: 1
+      page: this.$route.query.page? Number(this.$route.query.page) : 1
     };
   },
   components: {
     Card
   },
   mounted() {
-    this.FETCH_CHARACTERS_REQUEST();
+    if(this.page>1){
+      this.FETCH_CHARACTER_PAGE_REQUEST(this.page);
+    }else{
+      this.FETCH_CHARACTERS_REQUEST();
+    }
   },
   computed: {
     ...mapState("characters", ["characters", "info"])
@@ -59,6 +63,7 @@ export default {
   watch: {
     page: function() {
       this.FETCH_CHARACTER_PAGE_REQUEST(this.page);
+      this.$router.push({ path: "characters", query: { page: this.page } });
     }
   },
   methods: {
