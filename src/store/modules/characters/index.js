@@ -6,7 +6,8 @@ const state = {
     characters:[],
     isFetching:false,
     error:false,
-    info:{}
+    info:{},
+    episodes:[]
 }
 
 export default{

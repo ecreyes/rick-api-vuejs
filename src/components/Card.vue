@@ -17,7 +17,7 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn color="white" text>Show</v-btn>
+      <v-btn color="white" text :to="{name:'Details',params:{id}}">Show</v-btn>
     </v-card-actions>
   </v-card>
 </template>

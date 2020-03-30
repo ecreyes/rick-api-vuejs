@@ -50,16 +50,6 @@ export default {
           icon: "mdi-star",
           text: "Characters",
           route: "/characters"
-        },
-        {
-          icon: "mdi-send",
-          text: "Episodes",
-          route: "/episodes"
-        },
-        {
-          icon: "mdi-email-open",
-          text: "Locations",
-          route: "/locations"
         }
       ],
       model: 1
